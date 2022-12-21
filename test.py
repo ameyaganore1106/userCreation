@@ -2,6 +2,9 @@ import csv
 import subprocess
 # import paramiko
 
+import pandas as pd
+import io
+import requests
 
 # Reading Data from CSV 
 def readCSV():
@@ -20,6 +23,9 @@ def readCSV():
     file.close()
     return data
 
+def readCSV2():
+    df=pd.read_csv('TestSheet .csv')
+    print(df.head())    
 
 
 
@@ -54,4 +60,4 @@ def service():
         key = data[i][2]
         executeScript(username,grpname,key)         
 
-service()
+readCSV2()
